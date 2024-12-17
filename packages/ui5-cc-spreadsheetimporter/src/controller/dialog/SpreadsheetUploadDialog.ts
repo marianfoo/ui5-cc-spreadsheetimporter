@@ -90,7 +90,9 @@ export default class SpreadsheetUploadDialog extends ManagedObject {
 			this.spreadsheetUploadDialog.attachAvailableOptionsChanged(this.onAvailableOptionsChanged.bind(this));
 			this.spreadsheetUploadDialog.attachFileDrop(this.onFileDrop.bind(this));
 		}
-		if (this.component.getStandalone() && this.component.getColumns().length === 0) {
+		if (this.component.getStandalone() && 
+			this.component.getColumns().length === 0 && 
+			!this.component.getSpreadsheetTemplateFile()) {
 			this.spreadsheetOptionsModel.setProperty("/hideGenerateTemplateButton", true);
 		}
 	}
