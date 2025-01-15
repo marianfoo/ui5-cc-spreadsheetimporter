@@ -14,18 +14,18 @@
   },
   "devDependencies": {
     "@sap-ux/eslint-plugin-fiori-tools": "^0.5.0",
-    "@sap-ux/ui5-middleware-fe-mockserver": "^2.2.83",
-    "@sap/ux-specification": "^1.124.6",
-    "@sap/ux-ui5-tooling": "^1.15.6",
-    "@sapui5/types": "~1.131.0",
-    "@typescript-eslint/eslint-plugin": "^8.17.0",
-    "@typescript-eslint/parser": "^8.17.0",
-    "@ui5/cli": "^4.0.11",
-    "typescript": "^5.7.2",
+    "@sap-ux/ui5-middleware-fe-mockserver": "^2.2.86",
+    "@sap/ux-specification": "^1.124.7",
+    "@sap/ux-ui5-tooling": "^1.16.0",
+    "@sapui5/types": "~1.131.1",
+    "@typescript-eslint/eslint-plugin": "^8.20.0",
+    "@typescript-eslint/parser": "^8.20.0",
+    "@ui5/cli": "^4.0.12",
+    "typescript": "^5.7.3",
     "ui5-middleware-serveframework": "3.4.0",
     "ui5-middleware-ui5": "3.2.1",
-    "ui5-tooling-modules": "3.18.7",
-    "ui5-tooling-transpile": "^3.5.1"
+    "ui5-tooling-modules": "3.20.2",
+    "ui5-tooling-transpile": "^3.5.3"
   },
   "scripts": {
     "start": "fiori run  --o \"index.html?sap-ui-xx-viewCache=false\"",

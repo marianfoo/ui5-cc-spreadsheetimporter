@@ -36,8 +36,8 @@ jobs:
       #     # check chrome version
       #     google-chrome --version
 
-      - name: install gnome-keyring
-        run: sudo apt install gnome-keyring
+      # - name: install gnome-keyring
+      #   run: sudo apt install gnome-keyring
 
       - name: checkout spreadsheetupload Repo
         uses: actions/checkout@v4
