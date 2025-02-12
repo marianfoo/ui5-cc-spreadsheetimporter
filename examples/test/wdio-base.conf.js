@@ -20,6 +20,8 @@ const port = testappObject.port;
 let baseUrl = `http://localhost:${port}/index.html?sap-language=EN`;
 global.scenario = scenario;
 
+const isDebugEnabled = process.env.ACTIONS_STEP_DEBUG === 'true';
+
 module.exports.config = {
 	wdi5: {
 		logLevel: "error",
@@ -59,12 +61,16 @@ module.exports.config = {
 	waitforTimeout: 60000,
 	connectionRetryTimeout: process.argv.indexOf("--debug") > -1 ? 1200000 : 120000,
 	connectionRetryCount: 3,
-	services: ["ui5", [TimelineService]], // Add TimelineService here
+	services: isDebugEnabled 
+		? ["ui5", [TimelineService]]
+		: ["ui5"],
 	framework: "mocha",
-	reporters: [
-		"spec",
-		["timeline", { outputDir: "./reports/timeline", embedImages: true, screenshotStrategy: "before:click" }]
-	],
+	reporters: isDebugEnabled 
+		? [
+			"spec",
+			["timeline", { outputDir: "./reports/timeline", embedImages: true, screenshotStrategy: "before:click" }]
+		]
+		: ["spec"],
 	mochaOpts: {
 		ui: "bdd",
 		timeout: process.argv.indexOf("--debug") > -1 ? 600000 : 600000
