@@ -116,7 +116,7 @@ jobs:
           pnpm --filter ui5-cc-spreadsheetimporter-sample test -- -- --headless ${{ matrix.scenario }} ${{ matrix.ui5version }}
 
       - name: Upload Timeline Report
-        if: always()
+        if: always() && env.ACTIONS_STEP_DEBUG == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: timeline-report-${{ matrix.scenario }}-${{ matrix.ui5version }}
